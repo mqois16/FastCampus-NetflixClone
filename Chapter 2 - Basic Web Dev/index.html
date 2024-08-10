@@ -8,12 +8,13 @@
 </head>
 <body>
     <header>
-        <h1>Qhrack Theory</h1>
+        <h1 id="namaLengkap">Qhrack Theory</h1>
+        <button onclick="setNewElement()">Ganti Data</button>
     </header>
    <main class="">
     <article>
-        <h3>Rekomendasi Film Action</h3>
-        <p>Hello ini film terbaik genre ini!</p>
+        <h3 id="judulSatu">Rekomendasi Film Action</h3>
+        <p id="deskripsiSatu">Hello ini film terbaik genre ini!</p>
     </article>
     <article>
         <h3>Rekomendasi Film Drama</h3>
@@ -29,5 +30,18 @@
    <footer>
     <p>Dibuat oleh Qhrack Theory</p>
    </footer>
+   <script>
+    function setNewElement() {
+        const inputNamaLengkap = prompt("Siapa Nama Kamu?");
+        namaLengkap.textContent = inputNamaLengkap
+
+        const inputJudulSatu = prompt("Masukkan Judul Film Pertama!");
+        judulSatu.textContent = inputJudulSatu
+
+        const inputDeskripsiSatu = prompt("Masukkan Deskripsi Film Pertama!");
+        deskripsiSatu.textContent = inputDeskripsiSatu
+    }
+
+   </script>
 </body>
 </html>
