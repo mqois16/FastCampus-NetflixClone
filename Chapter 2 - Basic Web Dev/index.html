@@ -9,14 +9,18 @@
   <body>
     <header>
       <h1 id="namaLengkap">Qhrack Theory</h1>
-      <button onclick="setNewElement()">Ganti Data</button>
+      <button onclick="getUserData()">Ganti Data</button>
     </header>
     <main class="">
       <article>
         <h3 id="judulSatu">Rekomendasi Film Action</h3>
         <p id="deskripsiSatu">Hello ini film terbaik genre ini!</p>
       </article>
-      <article onmouseenter="articleEffect()" onmouseleave="articleEffectOff()" ondblclick="removeArticle()">
+      <article
+        onmouseenter="articleEffect()"
+        onmouseleave="articleEffectOff()"
+        ondblclick="removeArticle()"
+      >
         <h3 id="judulDua">Rekomendasi Film Drama</h3>
         <p id="deskripsiDua">Hello ini film terbaik genre ini!</p>
       </article>
@@ -30,25 +34,26 @@
       <p>Dibuat oleh Qhrack Theory</p>
     </footer>
     <script>
-      const films = [{
-        title : "Jokowi adalah Kita",
-        year : "2018",
-        description : "Kita bukanlah Jokowi",
-        director : "Dea Afrizal"
-      },{
-        title : "Jokowi adalah Kita 2",
-        year : "2022",
-        description : "Kita bukanlah Jokowi",
-        director : "Dea Afrizal"
-      }];
+      const films = [
+        {
+          title: "Jokowi adalah Kita",
+          year: "2018",
+          description: "Kita bukanlah Jokowi",
+          director: "Dea Afrizal",
+        },
+        {
+          title: "Jokowi adalah Kita 2",
+          year: "2022",
+          description: "Kita bukanlah Jokowi",
+          director: "Dea Afrizal",
+        },
+      ];
 
-      const film1 = films[0]
-      const film2 = films[1]
-      console.group("%cTables","color: tomato; font-size: 30pt;")
-      console.table(films)
-      console.groupEnd()
-
-
+      const film1 = films[0];
+      const film2 = films[1];
+      console.group("%cTables", "color: tomato; font-size: 30pt;");
+      console.table(films);
+      console.groupEnd();
 
       const article1 = document.getElementsByTagName("article")[0];
       const article2 = document.getElementsByTagName("article")[1];
@@ -56,9 +61,9 @@
       console.log(article2);
 
       function removeArticle() {
-        const isConfirm = confirm("Apkah anda yakin?")
-        if (isConfirm){
-            article2.remove()
+        const isConfirm = confirm("Apkah anda yakin?");
+        if (isConfirm) {
+          article2.remove();
         }
       }
       function articleEffectOff() {
@@ -79,8 +84,6 @@
         article3.style.transition = "1s";
       }
 
-      
-
       function setNewElement() {
         const inputNamaLengkap = prompt("Siapa Nama Kamu?");
         namaLengkap.textContent = inputNamaLengkap;
@@ -90,6 +93,13 @@
 
         const inputDeskripsiSatu = prompt("Masukkan Deskripsi Film Pertama!");
         deskripsiSatu.textContent = inputDeskripsiSatu;
+      }
+
+      function getUserData() {
+        const apiURL = "http://dummyjson.com/users/1";
+        fetch(apiURL)
+          .then((data) => data.json())
+          .then((user) => (namaLengkap.textContent = user.username));
       }
     </script>
   </body>
