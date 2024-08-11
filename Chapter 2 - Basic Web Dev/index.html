@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1 id="namaLengkap">Qhrack Theory</h1>
-        <button onclick="setNewElement()">Ganti Data</button>
+      <h1 id="namaLengkap">Qhrack Theory</h1>
+      <button onclick="setNewElement()">Ganti Data</button>
     </header>
-   <main class="">
-    <article>
+    <main class="">
+      <article>
         <h3 id="judulSatu">Rekomendasi Film Action</h3>
         <p id="deskripsiSatu">Hello ini film terbaik genre ini!</p>
-    </article>
-    <article>
-        <h3>Rekomendasi Film Drama</h3>
-        <p>Hello ini film terbaik genre ini!</p>
-    </article>
-    <article>
+      </article>
+      <article>
+        <h3 id="judulDua">Rekomendasi Film Drama</h3>
+        <p id="deskripsiDua">Hello ini film terbaik genre ini!</p>
+      </article>
+      <article>
         <h3>Rekomendasi Film Komedo</h3>
         <p>Hello ini film terbaik genre ini!</p>
-    </article>
-    
-   </main> 
+      </article>
+    </main>
 
-   <footer>
-    <p>Dibuat oleh Qhrack Theory</p>
-   </footer>
-   <script>
-    function setNewElement() {
+    <footer>
+      <p>Dibuat oleh Qhrack Theory</p>
+    </footer>
+    <script>
+      const article1 = document.getElementsByTagName("article")[0];
+      const article2 = document.getElementsByTagName("article")[1];
+      const article3 = document.getElementsByTagName("article")[2];
+      console.log(article2);
+
+      function articleEffect() {
+        article2.style.backgroundColor = "tomato"
+        article2.style.color = "white"
+        article2.style.scale = "1.2"
+        article2.style.transition = "1s"
+
+        article1.style.scale = "0.5"
+        article3.style.scale = "0.5"
+        article1.style.transition = "1s"
+        article3.style.transition = "1s"
+      }
+      article2.addEventListener("click", articleEffect)
+
+      function setNewElement() {
         const inputNamaLengkap = prompt("Siapa Nama Kamu?");
-        namaLengkap.textContent = inputNamaLengkap
+        namaLengkap.textContent = inputNamaLengkap;
 
         const inputJudulSatu = prompt("Masukkan Judul Film Pertama!");
-        judulSatu.textContent = inputJudulSatu
+        judulSatu.textContent = inputJudulSatu;
 
         const inputDeskripsiSatu = prompt("Masukkan Deskripsi Film Pertama!");
-        deskripsiSatu.textContent = inputDeskripsiSatu
-    }
-
-   </script>
-</body>
+        deskripsiSatu.textContent = inputDeskripsiSatu;
+      }
+    </script>
+  </body>
 </html>
