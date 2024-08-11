@@ -16,7 +16,7 @@
         <h3 id="judulSatu">Rekomendasi Film Action</h3>
         <p id="deskripsiSatu">Hello ini film terbaik genre ini!</p>
       </article>
-      <article>
+      <article onmouseenter="articleEffect()" onmouseleave="articleEffectOff()" ondblclick="removeArticle()">
         <h3 id="judulDua">Rekomendasi Film Drama</h3>
         <p id="deskripsiDua">Hello ini film terbaik genre ini!</p>
       </article>
@@ -55,6 +55,18 @@
       const article3 = document.getElementsByTagName("article")[2];
       console.log(article2);
 
+      function removeArticle() {
+        const isConfirm = confirm("Apkah anda yakin?")
+        if (isConfirm){
+            article2.remove()
+        }
+      }
+      function articleEffectOff() {
+        article1.style.scale = "1";
+        article2.style.scale = "1";
+        article3.style.scale = "1";
+      }
+
       function articleEffect() {
         article2.style.backgroundColor = "tomato";
         article2.style.color = "white";
@@ -66,7 +78,8 @@
         article1.style.transition = "1s";
         article3.style.transition = "1s";
       }
-      article2.addEventListener("click", articleEffect);
+
+      
 
       function setNewElement() {
         const inputNamaLengkap = prompt("Siapa Nama Kamu?");

@@ -42,7 +42,7 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 2rem;
     margin-top: 16px;
 }
 
