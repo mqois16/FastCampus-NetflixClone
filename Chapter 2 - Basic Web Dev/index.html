@@ -30,23 +30,43 @@
       <p>Dibuat oleh Qhrack Theory</p>
     </footer>
     <script>
+      const films = [{
+        title : "Jokowi adalah Kita",
+        year : "2018",
+        description : "Kita bukanlah Jokowi",
+        director : "Dea Afrizal"
+      },{
+        title : "Jokowi adalah Kita 2",
+        year : "2022",
+        description : "Kita bukanlah Jokowi",
+        director : "Dea Afrizal"
+      }];
+
+      const film1 = films[0]
+      const film2 = films[1]
+      console.group("%cTables","color: tomato; font-size: 30pt;")
+      console.table(films)
+      console.groupEnd()
+
+
+
       const article1 = document.getElementsByTagName("article")[0];
       const article2 = document.getElementsByTagName("article")[1];
       const article3 = document.getElementsByTagName("article")[2];
       console.log(article2);
 
       function articleEffect() {
-        article2.style.backgroundColor = "tomato"
-        article2.style.color = "white"
-        article2.style.scale = "1.2"
-        article2.style.transition = "1s"
+        article2.style.backgroundColor = "tomato";
+        article2.style.color = "white";
+        article2.style.scale = "1.2";
+        article2.style.transition = "1s";
 
-        article1.style.scale = "0.5"
-        article3.style.scale = "0.5"
-        article1.style.transition = "1s"
-        article3.style.transition = "1s"
+        article1.style.scale = "0.5";
+        article3.style.scale = "0.5";
+        article1.style.transition = "1s";
+        article3.style.transition = "1s";
       }
-      article2.addEventListener("click", articleEffect)
+      article2.addEventListener("click", articleEffect);
 
       function setNewElement() {
         const inputNamaLengkap = prompt("Siapa Nama Kamu?");
