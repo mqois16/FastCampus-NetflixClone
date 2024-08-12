@@ -36,8 +36,6 @@ header button:hover {
 }
 
 
-
-
 main {
     display: flex;
     justify-content: center;
@@ -46,21 +44,10 @@ main {
     margin-top: 16px;
 }
 
-main article {
-border: 2px solid black;
-padding: 10px;
-}
-
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: tomato;
-}
-
-footer p {
-    text-align: center;
-    color: white;
+main form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 @media (max-width: 600px) {

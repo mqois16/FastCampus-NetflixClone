@@ -11,121 +11,31 @@
       <h1 id="namaLengkap">Qhrack Theory</h1>
       <button onclick="getUserData()">Ganti Data</button>
     </header>
-    <main class="">
-      <article
-      onmouseenter="articleEffect(0)"
-        onmouseleave="articleEffectOff()"
-        ondblclick="removeArticle(0)"
-      >
-        <h3 id="judulSatu">Rekomendasi Film Action</h3>
-        <p id="deskripsiSatu">Hello ini film terbaik genre ini!</p>
-      </article>
-      <article
-        onmouseenter="articleEffect(1)"
-        onmouseleave="articleEffectOff()"
-        ondblclick="removeArticle(1)"
-      >
-        <h3 id="judulDua">Rekomendasi Film Drama</h3>
-        <p id="deskripsiDua">Hello ini film terbaik genre ini!</p>
-      </article>
-      <article
-      onmouseenter="articleEffect(2)"
-        onmouseleave="articleEffectOff()"
-        ondblclick="removeArticle(2)"
-      >
-        <h3>Rekomendasi Film Komedo</h3>
-        <p>Hello ini film terbaik genre ini!</p>
-      </article>
-    </main>
+<main>
+    <form onsubmit="register()">
+        <label for="">username</label>
+        <input type="text" id="username"/>
+        <label for="">password</label>
+        <input type="password" id="password"/>
+        <button type="submit">Register</button>
+    </form>
+</main>
 
-    <footer>
-      <p>Dibuat oleh Qhrack Theory</p>
-    </footer>
     <script>
-      const films = [
-        {
-          title: "Jokowi adalah Kita",
-          year: "2018",
-          description: "Kita bukanlah Jokowi",
-          director: "Dea Afrizal",
-        },
-        {
-          title: "Jokowi adalah Kita 2",
-          year: "2022",
-          description: "Kita bukanlah Jokowi",
-          director: "Dea Afrizal",
-        },
-      ];
+        function register(){
+            const inputUsername = username.value
+            const inputPassword = password.value
 
-      const film1 = films[0];
-      const film2 = films[1];
-      console.group("%cTables", "color: tomato; font-size: 30pt;");
-      console.table(films);
-      console.groupEnd();
-
-      const article = document.getElementsByTagName("article");
-
-
-      function removeArticle() {
-        const isConfirm = confirm("Apkah anda yakin?");
-        if (isConfirm) {
-          article2.remove();
-        }
-      }
-      function articleEffectOff() {
-        const articles = [0,1,2]
-        articles.forEach(function(n) {
-            article[n].style.scale = "1";
-})
-      }
-
-      function uneffectedArticles(ids){
-        article[ids].style.scale = "0.5";
-          article[ids].style.scale = "0.5";
-          article[ids].style.transition = "1s";
-          article[ids].style.transition = "1s";
-      }
-      function articleEffect(ids) {
-         
-        article[ids].style.backgroundColor = "tomato";
-        article[ids].style.color = "white";
-        article[ids].style.scale = "1.2";
-        article[ids].style.transition = "1s";
-
-        const articles = [0,1,2]
-        articles.forEach(function(n) {
-            if (n !== ids) {
-                uneffectedArticles(n)
+            if (inputUsername.length <= 4){
+                alert("Username harus lebih dari 4 karakter")
             }
-});
 
-      }
+            if (inputPassword.length <= 8){
+                alert("Password harus lebih dari 8 karakter")
+            }
 
-      function setNewElement() {
-        const inputNamaLengkap = prompt("Siapa Nama Kamu?");
-        namaLengkap.textContent = inputNamaLengkap;
-
-        const inputJudulSatu = prompt("Masukkan Judul Film Pertama!");
-        judulSatu.textContent = inputJudulSatu;
-
-        const inputDeskripsiSatu = prompt("Masukkan Deskripsi Film Pertama!");
-        deskripsiSatu.textContent = inputDeskripsiSatu;
-      }
-
-      function getRandomIntInclusive(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxFloored = Math.floor(max);
-  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
-}
-
-      function getUserData() {
-        const apiURL =`http://dummyjson.com/users/${getRandomIntInclusive(1, 30)}`;
-        fetch(apiURL)
-          .then((data) => data.json())
-          .then((user) => (namaLengkap.textContent = user.username));
-      }
-
-
+            alert("Berhasil daftar!")
+        }
     </script>
   </body>
 </html>
