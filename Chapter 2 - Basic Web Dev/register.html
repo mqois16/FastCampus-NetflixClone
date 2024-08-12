@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="namaLengkap">Qhrack Theory</h1>
+      <button onclick="getUserData()">Ganti Data</button>
+    </header>
+<main>
+    <form onsubmit="register()">
+        <label for="">username</label>
+        <input type="text" id="username"/>
+        <label for="">password</label>
+        <input type="password" id="password"/>
+        <button type="submit">Register</button>
+    </form>
+</main>
+
+    <script>
+        function register(){
+            const inputUsername = username.value
+            const inputPassword = password.value
+
+            if (inputUsername.length <= 4){
+                alert("Username harus lebih dari 4 karakter")
+            }
+
+            if (inputPassword.length <= 8){
+                alert("Password harus lebih dari 8 karakter")
+            }
+
+            alert("Berhasil daftar!")
+        }
+    </script>
+  </body>
+</html>
