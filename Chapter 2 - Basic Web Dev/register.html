@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <header>
       <h1 id="namaLengkap">Qhrack Theory</h1>
-      <button onclick="getUserData()">Ganti Data</button>
+      <button onclick="getUserData()" class="rounded px-4 py-2 bg-blue-500 my-1">Ganti Data</button>
     </header>
 <main>
     <form onsubmit="register()">
-        <label for="">username</label>
-        <input type="text" id="username"/>
-        <label for="">password</label>
-        <input type="password" id="password"/>
-        <button type="submit">Register</button>
+        <label class="underline italic " for="">username</label>
+        <input class="border rounded  p-2 border-indigo-500" type="text" id="username"/>
+        <label class="underline italic " for="">password</label>
+        <input class="border rounded  p-2 border-indigo-500" type="password" id="password"/>
+        <button class="bg-blue-500 text-white font-bold rounded p-2" type="submit">Register</button>
     </form>
 </main>
 
