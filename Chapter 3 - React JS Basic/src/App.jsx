@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 
@@ -31,14 +31,27 @@ function Article(props) {
 }
 
 function App() {
+  const [article, setArticle] = useState("")
+  const [counterClick, setCounterClick] = useState(1)
 
+  useEffect(() => {
+    fetch(`https://dummyjson.com/posts/${counterClick}`).then(data => data.json()).then(result => setArticle(result))
+  }, [counterClick])
+
+  function nextArticle() {
+    setCounterClick(counterClick + 1)
+  }
+
+  function prevArticle() {
+    setCounterClick(counterClick - 1)
+  }
   return (
     <main>
       <header>
         <WebTitle title="Netflix Clone" description="Ini adalah clone website Netflix" />
-        <Article title="Artikel Pertama" description="Ini adalah deskripsi artikel yang pertama" />
-        <Article title="Artikel Kedua" description="Ini adalah deskripsi artikel yang Kedua" />
-        <Article title="Artikel Ketiga" description="Ini adalah deskripsi artikel yang ketiga" />
+        <Article title={article.title} description={article.body} />
+        <button onClick={prevArticle}>Previous Article</button>
+        <button onClick={nextArticle}>Next Article</button>
       </header>
     </main>
   )
