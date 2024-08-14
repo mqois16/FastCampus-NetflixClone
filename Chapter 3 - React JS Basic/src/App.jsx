@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import { getArticle } from "./utils/getArticle"
 
 
 function WebTitle(props) {
@@ -44,7 +45,7 @@ function App() {
   const [counterClick, setCounterClick] = useState(1)
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/posts/${counterClick}`).then(data => data.json()).then(result => setArticle(result))
+    getArticle(counterClick).then(result => setArticle(result))
   }, [counterClick])
 
   function nextArticle() {
