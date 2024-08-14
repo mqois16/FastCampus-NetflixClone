@@ -30,6 +30,15 @@ function Article(props) {
   )
 }
 
+function LimitArticle() {
+  return (
+    <div>
+      <h3>Mencapai Limit!</h3>
+      <p>Anda sudah memasuki batas akhir untuk menampilkan artikel.</p>
+    </div>
+  )
+}
+
 function App() {
   const [article, setArticle] = useState("")
   const [counterClick, setCounterClick] = useState(1)
@@ -43,15 +52,24 @@ function App() {
   }
 
   function prevArticle() {
-    setCounterClick(counterClick - 1)
+    if (counterClick > 1) {
+      setCounterClick(counterClick - 1)
+    }
   }
+
   return (
     <main>
       <header>
         <WebTitle title="Netflix Clone" description="Ini adalah clone website Netflix" />
         <Article title={article.title} description={article.body} />
-        <button onClick={prevArticle}>Previous Article</button>
-        <button onClick={nextArticle}>Next Article</button>
+        {counterClick == 2 && <p>Clicked 2x</p>}
+
+        {counterClick > 4 && <LimitArticle />}
+        <div>
+          <button onClick={prevArticle}>Previous Article</button>
+          <button onClick={nextArticle}>Next Article</button>
+        </div>
+
       </header>
     </main>
   )
