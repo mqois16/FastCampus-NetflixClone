@@ -1,3 +1,12 @@
 h1 {
   color: crimson;
 }
+
+.layout {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeaea;
+  color: black;
+}

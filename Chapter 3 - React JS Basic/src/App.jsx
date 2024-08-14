@@ -1,44 +1,10 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { getArticle } from "./utils/getArticle"
-
-
-function WebTitle(props) {
-  const [title, setTitle] = useState(props.title)
-  const description = props.description
-
-  function changeTitle() {
-    setTitle("Back to WebDev")
-  }
-
-  return (
-    <div>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <button onClick={changeTitle}>Ganti Judul</button>
-    </div>
-  )
-}
-
-function Article(props) {
-  const title = props.title
-  const description = props.description
-  return (
-    <article>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </article>
-  )
-}
-
-function LimitArticle() {
-  return (
-    <div>
-      <h3>Mencapai Limit!</h3>
-      <p>Anda sudah memasuki batas akhir untuk menampilkan artikel.</p>
-    </div>
-  )
-}
+import Article from './components/Article'
+import LimitArticle from './components/LimitArticle'
+import WebTitle from './components/WebTitle'
+import Layout from './components/Layout'
 
 function App() {
   const [article, setArticle] = useState("")
@@ -59,7 +25,7 @@ function App() {
   }
 
   return (
-    <main>
+    <Layout>
       <header>
         <WebTitle title="Netflix Clone" description="Ini adalah clone website Netflix" />
         <Article title={article.title} description={article.body} />
@@ -72,7 +38,7 @@ function App() {
         </div>
 
       </header>
-    </main>
+    </Layout>
   )
 }
 
