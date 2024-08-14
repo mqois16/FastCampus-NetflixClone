@@ -28,15 +28,7 @@ function App() {
   return (
     <Layout>
       <header>
-        <WebTitle title="Netflix Clone" description="Ini adalah clone website Netflix" />
         <Article title={article.title} description={article.body} />
-        {counterClick == 2 && <p>Clicked 2x</p>}
-
-        {counterClick > 4 && <LimitArticle />}
-        <div>
-          <button onClick={() => prevArticle(article)}>Previous Article</button>
-          <button onClick={nextArticle}>Next Article</button>
-        </div>
 
       </header>
     </Layout>

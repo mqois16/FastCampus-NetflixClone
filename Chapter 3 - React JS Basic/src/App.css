@@ -10,3 +10,9 @@ h1 {
   background-color: #eaeaea;
   color: black;
 }
+
+article {
+  background-color: crimson;
+  padding: 20px;
+  cursor: pointer;
+}
