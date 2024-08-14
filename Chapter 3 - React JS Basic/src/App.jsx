@@ -18,7 +18,8 @@ function App() {
     setCounterClick(counterClick + 1)
   }
 
-  function prevArticle() {
+  function prevArticle(props) {
+    console.log(props)
     if (counterClick > 1) {
       setCounterClick(counterClick - 1)
     }
@@ -33,7 +34,7 @@ function App() {
 
         {counterClick > 4 && <LimitArticle />}
         <div>
-          <button onClick={prevArticle}>Previous Article</button>
+          <button onClick={() => prevArticle(article)}>Previous Article</button>
           <button onClick={nextArticle}>Next Article</button>
         </div>
 
