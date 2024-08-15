@@ -26,7 +26,7 @@ function Home() {
     <Layout>
       <header>
         <h1>{language == "en" ? "Watch movies for free!" : "Tonton film gratis!"}</h1>
-        <p>{movies?.message}</p>
+        <p className='bg-black text-white p-4 text-center'>{movies?.message}</p>
       </header>
     </Layout>
   )
