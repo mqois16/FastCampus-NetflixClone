@@ -1,16 +1,27 @@
 const express = require("express")
 const app = express()
+const { ERR, OK } = require("./utils/response")
 
 const PORT = 3002
 
 app.get("/", (request, response) => {
-    response.json({ message: "Heho" })
+    const data = {
+        isRunning: true,
+        serverVersion: "1.0.0"
+    }
+    OK(response, 200, data, "Success getting server endpoint")
 })
 
 //melihat listing movies
 app.get("/my-movies", (request, response) => {
     console.log("api movie")
-    response.json({ data: "movies aiueo" })
+    const data = {
+        id: 1,
+        title: "Kita bukanlah Jokowi",
+        year: 2014,
+        director: "Anwar Joko"
+    }
+    OK(response, 200, data, "Success getting my-movies endpoint")
 })
 
 //menambah listing movies
