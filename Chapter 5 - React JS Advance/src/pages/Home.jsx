@@ -26,7 +26,26 @@ function Home() {
     <Layout>
       <header>
         <h1>{language == "en" ? "Watch movies for free!" : "Tonton film gratis!"}</h1>
-        <p className='bg-black text-white p-4 text-center'>{movies?.message}</p>
+        <div className='w-full'>
+          <p className='text-center text-[#f1f1f1] bg-[#71b] font-bold text-sm my-3 hover:bg-blue-500 hover:text-red-300'>{movies?.message}</p>
+          <div className='grid grid-cols-2 gap-4'>
+            <div className='bg-indigo-500 p-4'>
+              <h1>Hello World!</h1>
+            </div>
+            <div className='bg-indigo-500 p-4'>
+              <h1>Hello World!</h1>
+            </div>
+            <div className='bg-indigo-500 p-4'>
+              <h1>Hello World!</h1>
+            </div>
+            <div className='bg-indigo-500 p-4'>
+              <h1>Hello World!</h1>
+            </div>
+
+          </div>
+        </div>
+
+
 
       </header>
     </Layout>

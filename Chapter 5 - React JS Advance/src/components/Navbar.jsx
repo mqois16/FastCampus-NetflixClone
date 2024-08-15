@@ -8,10 +8,11 @@ export default function Navbar() {
     return (
         <div className='navbar'>
             <h3>Netflix Clone</h3>
-            <div>
-                <button className='btn btn-active btn-accent mr-4' onClick={() => setLanguage("id")}>Indonesia</button>
+            <div className=''>
+                <button className='btn btn-active btn-accent mr-4 active:bg-red-500' onClick={() => setLanguage("id")}>Indonesia</button>
                 <button className='btn btn-active btn-accent' onClick={() => setLanguage("en")}>English</button>
             </div>
+
         </div>
     )
 }
