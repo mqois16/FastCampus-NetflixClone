@@ -9,8 +9,8 @@ export default function Navbar() {
         <div className='navbar'>
             <h3>Netflix Clone</h3>
             <div>
-                <button onClick={() => setLanguage("id")}>Indonesia</button>
-                <button onClick={() => setLanguage("en")}>English</button>
+                <button className='btn btn-active btn-accent mr-4' onClick={() => setLanguage("id")}>Indonesia</button>
+                <button className='btn btn-active btn-accent' onClick={() => setLanguage("en")}>English</button>
             </div>
         </div>
     )
