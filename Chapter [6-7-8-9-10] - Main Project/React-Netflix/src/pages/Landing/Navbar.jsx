@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAtom } from 'jotai'
-import { languageAtom } from '../jotai/atoms'
+import { languageAtom } from '../../jotai/atoms'
 
 export default function Navbar() {
     const [, setLanguage] = useAtom(languageAtom)
@@ -12,7 +12,7 @@ export default function Navbar() {
                 <button className='btn btn-active btn-accent mr-4 active:bg-red-500' onClick={() => setLanguage("id")}>Indonesia</button>
                 <button className='btn btn-active btn-accent' onClick={() => setLanguage("en")}>English</button>
             </div>
-            
+
         </div>
     )
 }

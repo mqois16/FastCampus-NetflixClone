@@ -1,0 +1,21 @@
+{
+  "name": "chapter-4---api-netflix",
+  "version": "1.0.0",
+  "description": "API untuk Netflix Clone",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "api",
+    "expressjs",
+    "netflix"
+  ],
+  "author": "qhrack",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}
