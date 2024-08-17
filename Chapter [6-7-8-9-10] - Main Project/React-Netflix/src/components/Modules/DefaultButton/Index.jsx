@@ -1,8 +1,8 @@
 import React from 'react'
 
-const DefaultButton = ({ text, onClick, styles = "bg-red-600 text-white py-1 px-4 rounded", isArrowIcon = false }) => {
+const DefaultButton = ({ text, onClick, styles, isArrowIcon = false }) => {
     return (
-        <button className={`${styles}`} onClick={onClick}>
+        <button className={`bg-red-600 text-white py-1 px-4 rounded ${styles}`} onClick={onClick}>
             {text}
             {isArrowIcon && (
                 <svg

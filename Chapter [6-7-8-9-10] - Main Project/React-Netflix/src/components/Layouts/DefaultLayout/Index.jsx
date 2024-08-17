@@ -3,7 +3,7 @@ import Navbar from '../../../pages/Landing/Navbar'
 
 const DefaultLayout = ({ children }) => {
     return (
-        <div>
+        <div className=''>
             <Navbar />
             {children}</div>
     )

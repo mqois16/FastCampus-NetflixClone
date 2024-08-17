@@ -14,4 +14,4 @@ const LIST_CTA_ID = [
     }
 ]
 
-export { LIST_CTA_EN, LIST_CTA_EN }
+export { LIST_CTA_EN, LIST_CTA_ID }
