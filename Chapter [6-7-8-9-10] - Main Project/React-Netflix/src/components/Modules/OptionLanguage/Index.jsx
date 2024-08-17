@@ -13,7 +13,7 @@ const OptionLanguage = () => {
 
     return (
 
-        <div div className='relative bg-[#1A1510] text-white rounded border-white-400 w-[180px] pl-8' >
+        <div div className='relative bg-[#1A1510] text-white rounded border-white-400 w-[180px] h-[30px] pl-8' >
             <div className='absolute top-[5px] left-2'>
                 <svg
                     width="16"
@@ -35,7 +35,7 @@ const OptionLanguage = () => {
                     </path>
                 </svg>
             </div>
-            <select className='w-full bg-transparent py-1' onChange={handleSelect}>
+            <select className='w-full bg-transparent py-1' onClick={handleSelect}>
                 <EachUtils of={LIST_LANGUAGE}
                     render={(item, index) => (
                         <option key={index} value={item.value}>

@@ -11,12 +11,12 @@ export default function Navbar() {
 
     return (
 
-        <header>
-            <nav className='flex justify-between items-center pr-10 pl-7 py-4'>
+        <header className='relative z-20'>
+            <nav className='flex flex-wrap justify-between items-center pr-10 pl-7 py-4'>
                 <div>
-                    <img src='../../public/netflix-logo.png' alt='netflix logo' width={140} />
+                    <img src='/netflix-logo.png' alt='netflix logo' width={140} />
                 </div>
-                <div className='flex items-center gap-4'>
+                <div className='flex flex-wrap items-center gap-4'>
                     <OptionLanguage />
                     <DefaultButton text={"Sign In"} onClick={() => navigate("/login")} />
                 </div>
