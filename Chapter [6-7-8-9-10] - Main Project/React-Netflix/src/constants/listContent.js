@@ -54,3 +54,15 @@ const LIST_CONTENT_4_EN = [
         desc: "Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
     }
 ]
+
+export {
+    LIST_CONTENT_1_ID,
+    LIST_CONTENT_2_ID,
+    LIST_CONTENT_3_ID,
+    LIST_CONTENT_4_ID,
+    LIST_CONTENT_1_EN,
+    LIST_CONTENT_2_EN,
+    LIST_CONTENT_3_EN,
+    LIST_CONTENT_4_EN,
+
+}
