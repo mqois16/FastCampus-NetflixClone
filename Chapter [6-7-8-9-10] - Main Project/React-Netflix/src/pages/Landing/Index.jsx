@@ -1,5 +1,6 @@
 
 import DefaultLayout from '../../components/Layouts/DefaultLayout/Index'
+import Footer from '../../components/Modules/Footer/Index'
 import Jumbotron from '../../components/Modules/Jumbotron/Index'
 import SectionDownload from '../../components/Modules/SectionContents/SectionDownload'
 import SectionEnjoy from '../../components/Modules/SectionContents/SectionEnjoy'
@@ -19,6 +20,7 @@ function Landing() {
       <SectionWatch />
       <SectionProfile />
       <SectionFAQ />
+      <Footer />
     </DefaultLayout>
   )
 }
