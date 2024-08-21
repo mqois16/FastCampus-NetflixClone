@@ -1,8 +1,9 @@
+import BrowseLayout from "@/components/Layouts/BrowseLayout/Index"
+import Navbar from "./Navbar"
+
 function Browse() {
     return (
-        <div>
-            <p>hehehe</p>
-        </div>
+        <BrowseLayout />
     )
 }
 export default Browse
