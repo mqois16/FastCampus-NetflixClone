@@ -1,8 +1,8 @@
 import React from 'react'
-import { JUMBOTRON_IMAGE } from "../../../constants/listAsset"
-import { LIST_JUMBOTRON_EN, LIST_JUMBOTRON_ID } from "../../../constants/listJumbotron"
-import EachUtils from '../../../utils/EachUtils'
-import { languageAtom } from '../../../jotai/atoms'
+import { JUMBOTRON_IMAGE } from "@/constants/listAsset"
+import { LIST_JUMBOTRON_EN, LIST_JUMBOTRON_ID } from "@/constants/listJumbotron"
+import EachUtils from '@/utils/EachUtils'
+import { languageAtom } from '@/jotai/atoms'
 import { useAtom } from 'jotai'
 import InputMembership from '../InputMembership/Index'
 

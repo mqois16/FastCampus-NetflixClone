@@ -2,7 +2,7 @@ import React from 'react'
 import { useAtom } from 'jotai'
 import { languageAtom } from '../../jotai/atoms'
 import OptionLanguage from '../../components/Modules/OptionLanguage'
-import DefaultButton from '../../components/Modules/DefaultButton/Index'
+import DefaultButton from '@/components/Modules/DefaultButton/Index'
 import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {

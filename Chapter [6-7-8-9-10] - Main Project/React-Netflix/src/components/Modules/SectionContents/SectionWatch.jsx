@@ -1,9 +1,9 @@
 import React from 'react'
-import SectionLayout from '../../Layouts/SectionLayout/Index'
-import EachUtils from '../../../utils/EachUtils'
-import { LIST_CONTENT_3_EN, LIST_CONTENT_3_ID } from '../../../constants/listContent'
-import { WATCH_DEVICE_IMAGE, WATCH_DEVICE_VIDEO } from '../../../constants/listAsset'
-import { languageAtom } from '../../../jotai/atoms'
+import SectionLayout from '@layouts/SectionLayout/Index'
+import EachUtils from '@/utils/EachUtils'
+import { LIST_CONTENT_3_EN, LIST_CONTENT_3_ID } from '@/constants/listContent'
+import { WATCH_DEVICE_IMAGE, WATCH_DEVICE_VIDEO } from '@/constants/listAsset'
+import { languageAtom } from '@/jotai/atoms'
 import { useAtom } from 'jotai'
 
 const SectionWatch = () => {

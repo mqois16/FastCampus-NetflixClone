@@ -1,8 +1,8 @@
 import React from 'react'
-import EachUtils from '../../../utils/EachUtils'
+import EachUtils from '@/utils/EachUtils'
 import { useAtom } from 'jotai'
-import { languageAtom } from '../../../jotai/atoms'
-import { LIST_CTA_EN, LIST_CTA_ID } from '../../../constants/listCTA'
+import { languageAtom } from '@/jotai/atoms'
+import { LIST_CTA_EN, LIST_CTA_ID } from '@/constants/listCTA'
 import DefaultButton from '../DefaultButton/Index'
 
 const InputMembership = () => {
@@ -14,7 +14,7 @@ const InputMembership = () => {
                 render={(item, index) => (
                     <div key={index}>
                         <h3 className='text-white text-xl'>{item.title}</h3>
-                        <div className='relative flex justify-center items-center gap-2 py-4 text-white/50'>
+                        <div className='relative flex justify-center items-center gap-2 py-4 text-white/'>
                             <input
                                 placeholder={item.labelInput}
                                 className='w-full p-4 bg-black/50 rounded-md border border-white/50 peer placeholder-transparent'

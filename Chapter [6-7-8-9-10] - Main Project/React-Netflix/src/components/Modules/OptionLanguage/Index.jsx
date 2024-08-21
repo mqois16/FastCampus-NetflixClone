@@ -1,8 +1,8 @@
 import React from 'react'
-import EachUtils from '../../../utils/EachUtils.jsx'
-import { LIST_LANGUAGE } from '../../../constants/listLanguage.js'
+import EachUtils from '@/utils/EachUtils.jsx'
+import { LIST_LANGUAGE } from '@/constants/listLanguage.js'
 import { useAtom } from 'jotai'
-import { languageAtom } from '../../../jotai/atoms'
+import { languageAtom } from '@/jotai/atoms'
 
 const OptionLanguage = () => {
     const [, setLanguage] = useAtom(languageAtom)

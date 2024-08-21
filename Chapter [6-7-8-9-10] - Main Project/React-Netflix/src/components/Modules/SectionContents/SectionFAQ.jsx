@@ -1,8 +1,8 @@
 import { useAtom } from 'jotai'
 import React, { useState } from 'react'
-import { languageAtom } from '../../../jotai/atoms'
-import { FAQ_TITLE_EN, FAQ_TITLE_ID, LIST_FAQ_EN, LIST_FAQ_ID } from '../../../constants/listFAQ'
-import EachUtils from '../../../utils/EachUtils'
+import { languageAtom } from '@/jotai/atoms'
+import { FAQ_TITLE_EN, FAQ_TITLE_ID, LIST_FAQ_EN, LIST_FAQ_ID } from '@/constants/listFAQ'
+import EachUtils from '@/utils/EachUtils'
 import { motion } from 'framer-motion'
 import InputMembership from '../InputMembership/Index'
 

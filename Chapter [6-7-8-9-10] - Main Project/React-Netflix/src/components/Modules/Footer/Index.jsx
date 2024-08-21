@@ -1,9 +1,9 @@
 import React from 'react'
-import EachUtils from '../../../utils/EachUtils'
+import EachUtils from '@/utils/EachUtils'
 import { LIST_FOOTER_EN, LIST_FOOTER_ID } from '../../../constants/listFooter'
 import OptionLanguage from '../OptionLanguage'
 import { useAtom } from 'jotai'
-import { languageAtom } from '../../../jotai/atoms'
+import { languageAtom } from '@/jotai/atoms'
 
 const Footer = () => {
     const [language] = useAtom(languageAtom)

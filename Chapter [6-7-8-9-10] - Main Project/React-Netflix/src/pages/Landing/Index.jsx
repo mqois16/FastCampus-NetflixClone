@@ -1,12 +1,11 @@
-
-import DefaultLayout from '../../components/Layouts/DefaultLayout/Index'
-import Footer from '../../components/Modules/Footer/Index'
-import Jumbotron from '../../components/Modules/Jumbotron/Index'
-import SectionDownload from '../../components/Modules/SectionContents/SectionDownload'
-import SectionEnjoy from '../../components/Modules/SectionContents/SectionEnjoy'
-import SectionFAQ from '../../components/Modules/SectionContents/SectionFAQ'
-import SectionProfile from '../../components/Modules/SectionContents/SectionProfile'
-import SectionWatch from '../../components/Modules/SectionContents/SectionWatch'
+import DefaultLayout from "@layouts/DefaultLayout/Index"
+import Footer from "@mods/Footer/Index"
+import Jumbotron from "@mods/Jumbotron/Index"
+import SectionDownload from "@mods/SectionContents/SectionDownload"
+import SectionEnjoy from "@mods/SectionContents/SectionEnjoy"
+import SectionFAQ from "@mods/SectionContents/SectionFAQ"
+import SectionProfile from "@mods/SectionContents/SectionProfile"
+import SectionWatch from "@mods/SectionContents/SectionWatch"
 
 
 
