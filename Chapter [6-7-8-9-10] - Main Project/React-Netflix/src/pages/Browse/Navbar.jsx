@@ -2,6 +2,7 @@ import InputSearchMovies from '@mods/BrowsePage/InputSearchMovies/Index'
 import { LIST_NAVBAR } from '@/constants/listNavbar'
 import EachUtils from '@/utils/EachUtils'
 import React from 'react'
+import AccountMenu from '@mods/BrowsePage/AccountMenu/Index'
 
 const Navbar = () => {
     return (
@@ -23,8 +24,9 @@ const Navbar = () => {
                         </ul>
 
                     </div>
-                    <div>
+                    <div className='flex items-center gap-4'>
                         <InputSearchMovies />
+                        <AccountMenu />
                     </div>
                 </div>
             </nav>
