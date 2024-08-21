@@ -1,3 +1,4 @@
+import InputSearchMovies from '@mods/BrowsePage/InputSearchMovies/Index'
 import { LIST_NAVBAR } from '@/constants/listNavbar'
 import EachUtils from '@/utils/EachUtils'
 import React from 'react'
@@ -10,7 +11,7 @@ const Navbar = () => {
                     <div className='flex items-center gap-4'>
                         <img src='./netflix-logo.png'
                             className='w-[120px] ml-2' />
-                        <ul className='flex items-center gap-4'>
+                        <ul className='sm:flex hidden items-center gap-4'>
                             <EachUtils
                                 of={LIST_NAVBAR}
                                 render={(item, index) => (
@@ -23,7 +24,7 @@ const Navbar = () => {
 
                     </div>
                     <div>
-
+                        <InputSearchMovies />
                     </div>
                 </div>
             </nav>

@@ -5,7 +5,7 @@ const BrowseLayout = ({ children }) => {
     return (
         <>
             <Navbar />
-            <div>
+            <div >
                 {children}
             </div>
         </>
