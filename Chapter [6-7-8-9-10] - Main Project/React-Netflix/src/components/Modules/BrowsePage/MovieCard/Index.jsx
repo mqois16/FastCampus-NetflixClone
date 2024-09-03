@@ -2,8 +2,13 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import { GoPlay, GoPlusCircle, GoChevronDown } from 'react-icons/go'
 import { motion } from 'framer-motion'
+import { useAtom } from 'jotai'
+import { idMovieAtom, isOpenModalAtom } from '@/jotai/atoms'
 
-const MovieCard = ({ data, isHover, idMovie, setIsHover, setIdMovie }) => {
+const MovieCard = ({ data, isHover, setIsHover, }) => {
+    const [idMovie, setIdMovie] = useAtom(idMovieAtom)
+    const [isOpenModal, setIsOpenModal] = useAtom(isOpenModalAtom)
+
     return (
         <>
             {isHover && idMovie === data.id ? (
@@ -32,7 +37,9 @@ const MovieCard = ({ data, isHover, idMovie, setIsHover, setIdMovie }) => {
                                 </button>
                             </div>
                             <div>
-                                <button className='rounded-full p-1 border'>
+                                <button
+                                    onClick={() => setIsOpenModal(true)}
+                                    className='rounded-full p-1 border'>
                                     <GoChevronDown size={20} />
                                 </button>
                             </div>
