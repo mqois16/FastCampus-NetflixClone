@@ -1,4 +1,3 @@
-import { DETAIL_VIDEO } from '@/constants/dummyVideo'
 import { idMovieAtom, isOpenModalAtom } from '@/jotai/atoms'
 import { useAtom } from 'jotai'
 import React, { useEffect, useState } from 'react'
@@ -24,7 +23,8 @@ const Modal = () => {
     }, [idMovie])
 
     const genreMapping = (genres) => {
-        let result = ""
+        if (genres) {
+            let result = ""
         genres.map((genre, index) => {
             if (index === genres.length - 1) {
                 result += genre.name
@@ -32,7 +32,8 @@ const Modal = () => {
                 result += genre.name + ", "
             }
         })
-        return result
+            return result  
+        }
     }
 
     return (
