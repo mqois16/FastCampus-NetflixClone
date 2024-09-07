@@ -1,14 +1,18 @@
-import { LIST_VIDEO_RECOMMENDATION } from '@/constants/dummyVideo'
-import { idMovieAtom } from '@/jotai/atoms'
+import { idMovieAtom, isOpenModalAtom } from '@/jotai/atoms'
 import EachUtils from '@/utils/EachUtils'
 import { getMoviesRecommendation } from '@/utils/getMoviesRecommendation'
+import { getVideoUrl } from '@/utils/getVideoUrl'
 import { useAtom } from 'jotai'
 import React, { useEffect, useState } from 'react'
 import { GoPlay } from 'react-icons/go'
+import { useNavigate } from 'react-router-dom'
 
 const Recommendation = () => {
-    const [idMovie,] = useAtom(idMovieAtom)
+    const navigate = useNavigate()
+    const [, setIsOpenModal] = useAtom(isOpenModalAtom)
+    const [idMovie, setIdMovie] = useAtom(idMovieAtom)
     const [moviesRecommendation, setMoviesRecommendation] = useState([])
+    const [videoUrl, setVideoURL] = useState(null)
 
     useEffect(() => {
         if (idMovie) {
@@ -23,10 +27,21 @@ const Recommendation = () => {
                 <EachUtils
                     of={moviesRecommendation}
                     render={(item, index) => (
-                        <div key={index} className='w-full h-auto cursor-pointer rounded-md bg-[#141414]'>
+                        <div key={index}
+                            className='w-full h-auto cursor-pointer rounded-md bg-[#141414]'
+                            onMouseEnter={() => {
+                                getVideoUrl({ movie_id: item.id }).then(result => setVideoURL(result))
+                            }}
+                        >
                             <div className='relative'>
                                 <img src={import.meta.env.VITE_BASE_URL_TMDB_IMG + item.poster_path} className='w-full h-48 rounded-t-md' />
-                                <button className='absolute top-10 left-1/2 -translate-x-1/2'>
+                                <button
+                                    className='absolute top-10 left-1/2 -translate-x-1/2'
+                                    onClick={() => {
+                                        navigate("/watch/" + videoUrl)
+                                        setIsOpenModal(false)
+                                        setIdMovie(null)
+                                    }}>
                                     <GoPlay size={44} />
                                 </button>
                             </div>

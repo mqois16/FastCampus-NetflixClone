@@ -7,20 +7,24 @@ import Recommendation from './Recommendation'
 import { getMovieDetail } from '@/utils/getMovieDetail'
 import ReactPlayer from 'react-player'
 import { getVideoUrl } from '@/utils/getVideoUrl'
+import { useNavigate } from 'react-router-dom'
 
 const Modal = () => {
+    const navigate = useNavigate()
+
     const [isOpenModal, setIsOpenModal] = useAtom(isOpenModalAtom)
-    const [idMovie] = useAtom(idMovieAtom)
+    const [idMovie, setIdMovie] = useAtom(idMovieAtom)
+
     const [movieDetail, setMovieDetail] = useState([])
     const [videoURL, setVideoURL] = useState(null)
 
     useEffect(() => {
-        if (idMovie) {
+        if (idMovie && isOpenModal) {
             getMovieDetail({ movie_id: idMovie }).then(result => setMovieDetail(result))
             getVideoUrl({ movie_id: idMovie }).then(result => setVideoURL(result))
         }
 
-    }, [idMovie])
+    }, [idMovie, isOpenModal])
 
     const genreMapping = (genres) => {
         if (genres) {
@@ -63,7 +67,17 @@ const Modal = () => {
                     </div>
                     <div className='absolute bottom-1/2 translate-y-14 left-10'>
                         <div className='flex gap-4'>
-                            <button className='bg-slate-50 w-32 text-black flex items-center justify-center gap-1 p-1.5 rounded-md font-bold text-xl'>
+                            <button
+                                className='bg-slate-50 w-32 text-black flex items-center justify-center gap-1 p-1.5 rounded-md font-bold text-xl'
+                                onClick={() => {
+                                    navigate("/watch/" + videoURL)
+                                    setIsOpenModal(false)
+                                    setVideoURL(null)
+                                    setMovieDetail([])
+                                    setIdMovie(null)
+                                }}
+
+                            >
                                 <GoPlay size={32} /> Play
                             </button>
                             <button className='text-slate-200 hover:text-white'>

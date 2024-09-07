@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Landing from './pages/Landing'
 import Browse from './pages/Browse'
+import Watch from './pages/Watch/Index'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     element: <Browse />,
     path: "/browse"
+  },
+  {
+    element: <Watch />,
+    path: "/watch/:id"
   },
 ])
 

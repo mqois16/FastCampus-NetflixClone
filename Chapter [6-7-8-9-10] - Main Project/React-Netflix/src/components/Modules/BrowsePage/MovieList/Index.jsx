@@ -3,17 +3,28 @@ import React, { useEffect, useState } from 'react'
 import MovieCard from '../MovieCard/Index'
 import CarouselLayout from '@/components/Layouts/CarouselLayout/Index'
 import { useAtom } from 'jotai'
-import { idMovieAtom } from '@/jotai/atoms'
+import { idMovieAtom, isFetchingAtom } from '@/jotai/atoms'
 import { getMoviesByType } from '@/utils/getMoviesByType'
 
 const MovieList = ({ title, moviesType }) => {
     const [isHover, setIsHover] = useState(false)
     const [, setIdMovie] = useAtom(idMovieAtom)
     const [movieList, setMovieList] = useState([])
+    const [, setIsFetching] = useAtom(isFetchingAtom)
 
     useEffect(() => {
-        getMoviesByType({ moviesType }).then((result) => setMovieList(result))
-    }, [])
+        if (moviesType) {
+            getMoviesByType({ moviesType }).then((result) => {
+                setIsFetching(true)
+                setMovieList(result)
+            }).finally(() => {
+                setTimeout(() => {
+                    setIsFetching(false)
+                }, 500)
+            })
+        }
+
+    }, [moviesType])
 
     return (
         <section className='px-8 py-4'>
