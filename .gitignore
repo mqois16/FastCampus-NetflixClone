@@ -5,7 +5,7 @@ yarn-debug.log
 yarn-error.log
 
 #firebase
-src/utils/firebase.js
+src/utils/firebaseConfig.js
 
 # Optional
 # Ignore lock files
