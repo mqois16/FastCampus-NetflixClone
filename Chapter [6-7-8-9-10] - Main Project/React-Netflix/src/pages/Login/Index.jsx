@@ -1,5 +1,6 @@
+import DefaultLayout from '@/components/Layouts/DefaultLayout/Index'
 import { JUMBOTRON_IMAGE } from '@/constants/listAsset'
-import { emailAtom, tokenAtom } from '@/jotai/atoms'
+import { emailAtom, emailStorageAtom, tokenAtom } from '@/jotai/atoms'
 import { auth } from '@/utils/firebase'
 import { signInWithEmailAndPassword, getIdToken } from 'firebase/auth'
 import { useAtom } from 'jotai'
@@ -11,8 +12,9 @@ import { toast } from 'react-toastify'
 const Login = () => {
     const navigate = useNavigate()
 
-    const [token, setToken] = useAtom(tokenAtom)
+    const [, setToken] = useAtom(tokenAtom)
     const [email, setEmail] = useAtom(emailAtom)
+    const [, setEmailStorage] = useAtom(emailStorageAtom)
     const [password, setPassword] = useState(null)
 
     const handleLogin = async (e) => {
@@ -22,6 +24,7 @@ const Login = () => {
             if (login) {
                 const firebaseToken = await getIdToken(login.user)
                 setToken(firebaseToken)
+                setEmailStorage(login.user.email)
                 navigate("/browse")
             }
         } catch (error) {
@@ -32,7 +35,7 @@ const Login = () => {
     }
 
     return (
-        <>
+        <DefaultLayout>
             <img
                 src={JUMBOTRON_IMAGE}
                 className='image-full h-[100vh] object-cover opacity-70'
@@ -80,7 +83,7 @@ const Login = () => {
                     </div>
                 </form>
             </div>
-        </>
+        </DefaultLayout>
     )
 }
 

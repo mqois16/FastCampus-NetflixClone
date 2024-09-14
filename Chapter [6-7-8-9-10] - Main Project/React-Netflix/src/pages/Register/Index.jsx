@@ -8,6 +8,7 @@ import { auth } from '@/utils/firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DefaultLayout from '@/components/Layouts/DefaultLayout/Index'
 
 const Register = () => {
     const navigate = useNavigate()
@@ -33,7 +34,7 @@ const Register = () => {
     }
 
     return (
-        <>
+        <DefaultLayout>
             <ToastContainer
                 position="top-center"
                 theme="dark"
@@ -86,7 +87,7 @@ const Register = () => {
                     </div>
                 </form>
             </div>
-        </>
+        </DefaultLayout>
     )
 }
 
