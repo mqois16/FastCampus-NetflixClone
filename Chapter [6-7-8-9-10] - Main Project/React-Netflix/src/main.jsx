@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Landing from './pages/Landing'
 import Browse from './pages/Browse'
 import Watch from './pages/Watch/Index'
+import Register from './pages/Register/Index'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     element: <Watch />,
     path: "/watch/:id"
+  },
+  {
+    element: <Register />,
+    path: "/register"
   },
 ])
 
