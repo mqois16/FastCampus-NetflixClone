@@ -5,12 +5,12 @@ import React, { useState } from 'react'
 import { GoChevronLeft } from 'react-icons/go'
 import { useNavigate } from 'react-router-dom'
 
-const Register = () => {
+const Login = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useAtom(emailAtom)
     const [password, setPassword] = useState(null)
 
-    const handleRegister = (e) => {
+    const handleLogin = (e) => {
         e.preventDefault()
         // 
     }
@@ -27,7 +27,7 @@ const Register = () => {
                         <GoChevronLeft
                             onClick={() => navigate("/")}
                             size={28} className='text-slate-200 hover:text-white cursor-pointer' />
-                        <h3>Sign Up</h3>
+                        <h3>Sign In</h3>
                     </div>
                     <div className='relative'>
                         <input
@@ -54,13 +54,13 @@ const Register = () => {
                     </div>
                     <div className='flex flex-col gap-4'>
                         <button
-                            onClick={handleRegister}
+                            onClick={handleLogin}
                             className='bg-red-500 py-3 w-full text-white font-bold rounded-md'>
-                            Sign Up
+                            Sign In
                         </button>
-                        <p>Already have an account? <span
-                            onClick={() => navigate("/login")}
-                            className='text-blue-500 underline cursor-pointer ml-2'>Sign in here</span> </p>
+                        <p>Don't have an account? <span
+                            onClick={() => navigate("/register")}
+                            className='text-blue-500 underline cursor-pointer ml-2'>Sign up here</span> </p>
                     </div>
                 </form>
             </div>
@@ -68,4 +68,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default Login
