@@ -4,22 +4,46 @@ import { useAtom } from 'jotai'
 import React, { useState } from 'react'
 import { GoChevronLeft } from 'react-icons/go'
 import { useNavigate } from 'react-router-dom'
+import { auth } from '@/utils/firebase'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useAtom(emailAtom)
     const [password, setPassword] = useState(null)
 
-    const handleRegister = (e) => {
+    const notify = (message) => toast(message);
+
+    const handleRegister = async (e) => {
         e.preventDefault()
+        try {
+            const register = await createUserWithEmailAndPassword(auth, email, password)
+            if (register) {
+                notify('REGISTER SUCCESS!')
+
+                setTimeout(() => {
+                    navigate('/login')
+                }, 3000)
+            }
+        } catch (error) {
+            notify(error.message)
+        }
+
         // 
     }
 
     return (
         <>
+            <ToastContainer
+                position="top-center"
+                theme="dark"
+                autoClose={2000}
+            />
             <img
                 src={JUMBOTRON_IMAGE}
-                className='image-full h-[100vh] object-cover opacity-70'
+                className='w-full h-[100vh] object-cover opacity-70'
             />
             <div className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-black/80 px-8 py-16 rounded-xl max-w-xl w-full'>
                 <form className='flex flex-col gap-4'>
