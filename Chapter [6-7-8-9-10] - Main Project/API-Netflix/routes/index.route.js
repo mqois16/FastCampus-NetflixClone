@@ -8,6 +8,6 @@ router.post("/my-movies", UserController.AddFavoriteMovies)
 router.delete("/my-movies", UserController.RemoveFavoriteMovies)
 
 //User signin token
-router.post("my-token", UserController.SignInToken)
+router.post("/my-token", UserController.SignInToken)
 
 module.exports = router
