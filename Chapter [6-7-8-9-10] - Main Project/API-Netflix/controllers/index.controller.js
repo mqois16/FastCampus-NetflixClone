@@ -14,9 +14,16 @@ const GetFavoriteMovies = async (req, res) => {
 
 const AddFavoriteMovies = async (req, res) => {
     try {
-        const { email, token, data } = req.body
-        const result = { email, token, data }
-        return OK(res, 200, result, "add favorite movies success")
+        // ambil tangkapan data
+        const { data } = req.body
+        // ambil model dari mongoose
+        const user = await User.findById(req.user._id)
+        // menentukan key yang diupdate
+        user.favoriteMovies.push(data)
+        // action untuk update
+        await user.save()
+
+        return OK(res, 201, data, "add favorite movies success")
     } catch (error) {
         return ERR(res, 500, "error adding favorite movies")
     }
