@@ -12,6 +12,8 @@ router.delete("/my-movies", checkToken, UserController.RemoveFavoriteMovies)
 router.post("/my-token", UserController.SignInToken)
 //User signout token
 router.delete("/my-token", checkToken, UserController.SignOutToken)
+//User signup token
+router.post("/sign-up", UserController.SignUpUser)
 
 
 module.exports = router
